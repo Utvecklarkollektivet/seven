@@ -1,0 +1,14 @@
+<h1><%= @project.title %></h1>
+<% if @project.owner?(current_user) %>
+	<%= link_to("Ändra projekt", edit_project_path(@project)) %>
+<% end %>
+
+<div class="description">
+	<%= markdown(@project.description) %>
+</div>
+
+<div class="images">
+  <% @project.project_images.each do |image| %>
+    <%= image_tag image.image.url, alt: @project.title %>
+  <% end %>
+</div>

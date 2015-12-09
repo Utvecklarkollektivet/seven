@@ -1,0 +1,42 @@
+<div class="row">
+<%= form_for(@project, html: { class: 'col s12', multipart: true }) do |f| %>
+
+	<div class="row">
+		<div class="input-field col s12">
+			<%= f.text_field :title, required: true %>
+			<%= f.label :title, "Titel" %>
+		</div>
+	</div>
+
+  <div class="row">
+    <div class="input-field col s12">
+			<%= f.text_area :description, class: "materialize-textarea" %>
+			<%= f.label :description, "Beskrivning (Markdown)" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12 m6">
+	    <%= f.text_field :website, placeholder: "http://" %>
+      <%= f.label :website, "Hemsida" %>
+    </div>
+    <div class="input-field col s12 m6">
+      <%= f.text_field :source, placeholder: "http://" %>
+      <%= f.label :source, "Källkod" %>
+    </div>
+  </div>
+
+	<div class="row">
+		<label>Bilder</label>
+		<%= f.fields_for :project_images do |pi| %>
+      <%= pi.file_field :image, multiple: true, name: "project_images[image][]" %>
+    <% end %>
+	</div>
+
+	<div class="row">
+    <div class="input-field col s12">
+			<%= f.submit "Spara" %>
+		</div>
+	</div>
+<% end %>
+</div>
