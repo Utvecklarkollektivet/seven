@@ -5,7 +5,7 @@
 <div class="showcase">
 	<% @projects.each do |project| %>
 		<div class="row project-item">
-			<div class="col s3 image" style="background: url(<%= project.project_images.first.image.url %>); background-size: cover;"></div>
+			<div class="col s3 image" style="background: url(<%= project.project_images.first.image.url unless project.project_images.first.nil?%>); background-size: cover;"></div>
 			<div class="col s8 offset-s1 info">
 				<h2><%= link_to project.title, project %></h2>
 				<%= markdown(project.excerpt) %>
