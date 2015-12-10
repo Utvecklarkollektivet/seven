@@ -27,7 +27,7 @@
   </div>
 
 	<div class="row">
-		<label>Bilder</label>
+		<label>Bilder</label><br/>
 		<%= f.fields_for :project_images do |pi| %>
       <%= pi.file_field :image, multiple: true, name: "project_images[image][]" %>
     <% end %>
@@ -35,7 +35,7 @@
 
 	<div class="row">
     <div class="input-field col s12">
-			<%= f.submit "Spara" %>
+			<%= f.submit "Spara", class: "btn" %>
 		</div>
 	</div>
 <% end %>

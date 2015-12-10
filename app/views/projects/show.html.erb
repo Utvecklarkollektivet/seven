@@ -1,4 +1,24 @@
+<div class="project">
 <h1><%= @project.title %></h1>
+<div class="meta">
+	<% if @project.source %>	
+		<% if @project.github? %>
+			<%= link_to(@project.source, target: "_blank") do %>
+				<%= fa_icon "github" %> Github
+			<% end %>
+		<% elsif @project.bitbucket? %>
+			<%= link_to(@project.source, target: "_blank") do %>
+        <%= fa_icon "bitbucket" %> Bitbucket
+      <% end %>
+		<% else %>
+			<%= link_to(@project.source, target: "_blank") %>
+		<% end %>
+	<% end %>
+	<% if @project.website %>
+		<%= link_to(@project.website, @project.website, target: "_blank") %>
+	<% end %>
+</div>
+
 <% if @project.owner?(current_user) %>
 	<%= link_to("Ändra projekt", edit_project_path(@project)) %>
 <% end %>
@@ -9,6 +29,9 @@
 
 <div class="images">
   <% @project.project_images.each do |image| %>
-    <%= image_tag image.image.url, alt: @project.title %>
+		<%= link_to(image.image.url, class: "fancybox") do %>
+    	<%= image_tag image.image.url, alt: @project.title %>
+		<% end %>
   <% end %>
+</div>
 </div>

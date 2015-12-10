@@ -1,3 +1,16 @@
-<% @projects.each do |project| %>
-  <%= link_to project.title, project %><br/>
+<%= link_to(new_project_path, class: "waves-effect waves-light btn right") do %>
+	<i class="material-icons left"></i>Lägg till projekt
 <% end %>
+
+<div class="showcase">
+	<% @projects.each do |project| %>
+		<div class="row project-item">
+			<div class="col s3 image" style="background: url(<%= project.project_images.first.image.url %>); background-size: cover;"></div>
+			<div class="col s8 offset-s1 info">
+				<h2><%= link_to project.title, project %></h2>
+				<%= markdown(project.excerpt) %>
+			</div>
+		</div>
+		<div class="divider"></div>
+	<% end %>
+</div>

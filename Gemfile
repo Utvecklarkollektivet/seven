@@ -12,6 +12,10 @@ gem 'devise'
 gem 'carrierwave'
 gem 'redcarpet'
 gem 'friendly_id'
+gem 'materialize-sass'
+gem 'jquery-turbolinks'
+gem 'font-awesome-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
 
 group :development, :test do
   gem 'byebug'

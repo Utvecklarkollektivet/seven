@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
 	resources :projects
 	
-	get "/showcase" => "projects#index"
+	get "/showcase" => "projects#index", as: 'showcase'
 	root "home#index"
 end

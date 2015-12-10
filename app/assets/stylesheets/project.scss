@@ -1,0 +1,24 @@
+
+div.project {
+	h1 {
+		font-size: 2.5rem;
+		color: color("blue-grey", "darken-2");
+	}
+	div.meta {
+		a {
+			color: color("pink", "darken-2");
+			margin-right: 1rem;
+			font-size: 1.1rem;
+		}
+	}
+
+	div.images {
+		margin-top: 2rem;
+		img {
+			width: 20%;
+			height: auto;
+			margin: 1em;
+		}		
+	}
+}
+

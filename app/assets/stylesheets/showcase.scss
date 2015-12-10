@@ -1,0 +1,14 @@
+div.showcase {
+	margin-top: 4rem;
+	
+	div.project-item {
+		margin: 4rem;
+		h2 {
+			margin-top: 0;
+			a {
+				font-size: 2.2rem;
+				color: color("blue-grey", "darken-2");
+			}
+		}
+	}
+}
