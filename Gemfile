@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'capistrano-foreman'
 end
 
 group :production do
