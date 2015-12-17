@@ -17,6 +17,7 @@ gem 'materialize-sass'
 gem 'jquery-turbolinks'
 gem 'font-awesome-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
+gem "pundit"
 
 group :development, :test do
   gem 'byebug'

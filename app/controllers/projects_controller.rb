@@ -1,15 +1,18 @@
 class ProjectsController < ApplicationController
 	before_action :set_project, only: [ :edit, :update, :show ]
+
   def index
 		@projects = Project.where(public: true).order("updated_at	DESC")
   end
 
 	def new
+		authorize Project
 		@project = Project.new
     @project_image = @project.project_images.build
 	end
 
 	def create
+		authorize Project
     @project = Project.new(project_params)
 		@project.user = current_user
 		if @project.save
@@ -23,9 +26,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
+		authorize Project
 	end
 
 	def update
+		authorize Project
 	end
 
 	private
