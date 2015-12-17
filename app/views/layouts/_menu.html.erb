@@ -1,4 +1,7 @@
+<li><%= link_to('Hem', root_path) %></li>
 <li><%= link_to("Showcase", showcase_path) %>
+<li><%= link_to('Slack', slack_path) %></li>
+<li><%= link_to('Om oss', about_path) %></li>
 <% if user_signed_in? %>
 <li>
   <%= link_to('Logga ut', destroy_user_session_path, :method => :delete) %>

@@ -1,3 +1,33 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+div.home {
+	margin-top: -32px;
+	div.splash {
+		background-image: asset-data-url("splash.png");
+		background-size: cover;
+		height: 35em;
+
+		div.overlay {
+			width: 100%;
+			height: 100%;
+			background: rgba(15, 18, 27, 0.62);
+			background-position: center;
+			text-align: center;
+		
+			h1 {
+				color: #fff;
+			}
+		}
+	}
+
+	div.features {
+		text-align: center;
+		h2 {
+			font-size: 1.7em;
+			border-bottom: solid 3px color('blue-grey', 'lighten-1');
+			padding-bottom: 0.7em;
+			margin-top: 2em;
+		}
+	}
+
+}
+
+

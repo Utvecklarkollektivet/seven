@@ -22,7 +22,11 @@
   </div>
 </nav>
 
-	<div class="container content">
+<% if current_page?(:controller => 'pages', :action => 'home') %>
+  <div class="home">
+<% else %>
+  <div class="container content">
+<% end %>
 	<% if notice %>
 		<p class="notice"><%= notice %></p>
 	<% end %>

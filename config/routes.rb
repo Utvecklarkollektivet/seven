@@ -4,5 +4,8 @@ Rails.application.routes.draw do
 	resources :projects
 	
 	get "/showcase" => "projects#index", as: 'showcase'
-	root "home#index"
+	get "/about" => "pages#about", as: 'about'
+	get "/slack" => "pages#slack", as: 'slack'
+
+	root "pages#home"
 end
